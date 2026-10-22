@@ -1,0 +1,2 @@
+# Netlify / Cloudflare Pages: force HTTPS (both hosts also offer an "Always use HTTPS" toggle)
+http://:hostname/*  https://:hostname/:splat  301!

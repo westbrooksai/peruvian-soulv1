@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessibility · Peruvian Soul</title>
+  <meta name="description" content="Peruvian Soul's commitment to an accessible website and restaurant.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://unpkg.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self'; frame-src https://www.google.com https://challenges.cloudflare.com; connect-src 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#15100d">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <script src="site.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="legal-header">
+    <a href="index.html" class="logo" aria-label="Peruvian Soul home"><span class="logo__mark" aria-hidden="true">✦</span><span class="logo__text">Peruvian <em>Soul</em></span></a>
+    <a href="index.html#visit" class="btn btn--gold btn--sm">Reserve a Table</a>
+  </header>
+
+  <main id="main" class="legal" tabindex="-1">
+    <p class="eyebrow">Legal</p>
+    <h1>Accessibility <em>Statement</em></h1>
+    <p class="legal__updated">Last reviewed October 22, 2026</p>
+
+    <h2>Our commitment</h2>
+    <p>Everyone should be able to find our menu, plan a visit and book a table. We aim for this website to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA, the standard commonly used for the Americans with Disabilities Act (ADA).</p>
+
+    <h2>What we've done</h2>
+    <ul>
+      <li>A “Skip to main content” link and a logical heading structure for screen readers.</li>
+      <li>Text descriptions for every photo and video.</li>
+      <li>Every feature works with a keyboard alone, with a clearly visible focus outline.</li>
+      <li>Text and buttons meet AA color-contrast ratios.</li>
+      <li>Forms have labels, clear required fields and error messages that screen readers announce.</li>
+      <li>A “Pause motion” button stops moving and animated content. If you turn on “reduce motion” in your device settings, the site is calm by default.</li>
+      <li>The layout works on phones and when zoomed up to 400%.</li>
+    </ul>
+
+    <h2>Known limitations</h2>
+    <p>The embedded Google Map is provided by a third party and may not be fully accessible. Our address and written directions are always available as text on the Visit section.</p>
+
+    <h2>In the restaurant</h2>
+    <p>[Confirm with the restaurant:] Our entrance, dining room and restrooms are wheelchair accessible. Service animals are welcome. Large-print menus are available on request.</p>
+
+    <h2>Need help or found a problem?</h2>
+    <p>If anything on this site is hard to use, please tell us. We'll help you book by phone right away and work to fix the problem.</p>
+    <p><a href="tel:+13015550142">(301) 555-0142</a><br>
+      <span class="js-email" data-user="hola" data-domain="peruviansoul.example">hola [at] peruviansoul.example</span></p>
+  </main>
+
+  <footer class="footer textile-bg">
+    <nav class="footer__links container" aria-label="Legal">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="accessibility.html" aria-current="page">Accessibility</a>
+      <button type="button" class="link-btn" data-cookie-settings>Cookie Settings</button>
+    </nav>
+    <p class="footer__legal container">© 2026 Peruvian Soul</p>
+  </footer>
+</body>
+</html>

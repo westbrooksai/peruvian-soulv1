@@ -1,0 +1,29 @@
+# ---------------------------------------------------------
+# Peruvian Soul — Apache server config
+# Forces HTTPS and sends security headers.
+# (For Netlify / Cloudflare Pages, the same rules live in _headers and _redirects.)
+# ---------------------------------------------------------
+
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+<IfModule mod_headers.c>
+  # Tell browsers to only ever use HTTPS for this site (1 year)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://unpkg.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self'; frame-src https://www.google.com https://challenges.cloudflare.com; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+</IfModule>
+
+# Block access to hidden files (e.g. .git)
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+ErrorDocument 404 /index.html

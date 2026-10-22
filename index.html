@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Peruvian Soul · Frederick, MD</title>
+  <meta name="description" content="Peruvian Soul — modern Peruvian cuisine and pisco cocktails by Chef Antonio Poggi in Frederick, Maryland.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://unpkg.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self'; frame-src https://www.google.com https://challenges.cloudflare.com; connect-src 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#15100d">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <script src="site.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <noscript><style>.preloader { display: none; }</style></noscript>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Preloader / intro animation -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__mark">
+      <svg viewBox="0 0 120 120" class="preloader__svg">
+        <!-- Chakana (Andean cross) — SVG line drawing -->
+        <path d="M45 10h30v20h15v15h20v30H90v15H75v20H45V90H30V75H10V45h20V30h15z" />
+        <circle cx="60" cy="60" r="12" />
+      </svg>
+      <span class="preloader__word">Peruvian Soul</span>
+    </div>
+  </div>
+
+  <!-- Scroll progress indicator -->
+  <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+
+  <!-- Grain texture -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Sticky header with shrink -->
+  <header class="header">
+    <a href="#top" class="logo" aria-label="Peruvian Soul home">
+      <span class="logo__mark">✦</span>
+      <span class="logo__text">Peruvian <em>Soul</em></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#food">Food</a>
+      <a href="#menu">Menu</a>
+      <a href="#cocktails">Cocktails</a>
+      <a href="#story">Our Story</a>
+      <a href="#atmosphere">Atmosphere</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a href="#visit" class="btn btn--gold btn--sm header__cta magnetic">Reserve a Table</a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="offcanvas">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Off-canvas menu (mobile) -->
+  <div class="offcanvas" id="offcanvas" aria-hidden="true">
+    <nav class="offcanvas__nav" aria-label="Mobile">
+      <a href="#food">Food</a>
+      <a href="#menu">Menu</a>
+      <a href="#cocktails">Cocktails</a>
+      <a href="#story">Our Story</a>
+      <a href="#atmosphere">Atmosphere</a>
+      <a href="#visit">Plan Your Visit</a>
+    </nav>
+    <p class="offcanvas__meta">Tue–Sun · 5pm–late<br>Downtown Frederick, MD</p>
+  </div>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ============ HERO: background video hero ============ -->
+    <section class="hero" id="top" aria-label="Welcome">
+      <div class="hero__media">
+        <!--
+          Replace this placeholder with the real hero reel, e.g.:
+          <video class="hero__video" autoplay muted loop playsinline poster="img/hero-poster.jpg">
+            <source src="video/hero-reel.mp4" type="video/mp4">
+          </video>
+        -->
+        <div class="ph ph--video hero__ph" role="img" aria-label="Video: Chef Antonio Poggi plates a dish, a bartender pours a pisco sour, and guests share dinner in the warmly lit dining room" data-label="Hero video · chef plating → pisco pour → guests at dinner">
+          <div class="hero__scenes" aria-hidden="true">
+            <span class="hero__scene is-active" style="--a:#5a2c18;--b:#1b0f0a">Chef plating ceviche</span>
+            <span class="hero__scene" style="--a:#7a3b4f;--b:#1a0d12">Pisco sour being poured</span>
+            <span class="hero__scene" style="--a:#6b4a1f;--b:#140e08">Guests sharing dinner</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__shade"></div>
+
+      <div class="hero__content">
+        <p class="eyebrow hero__eyebrow">Cocina Peruana · Frederick, Maryland</p>
+        <h1 class="hero__title">
+          <span class="line"><span class="line__inner">The Soul of Peru.</span></span>
+          <span class="line"><span class="line__inner"><em>A New Experience</em></span></span>
+          <span class="line"><span class="line__inner"><em>in Frederick.</em></span></span>
+        </h1>
+        <div class="hero__actions">
+          <a href="#menu" class="btn btn--ghost magnetic">Explore the Menu</a>
+          <a href="#visit" class="btn btn--gold magnetic">Reserve a Table</a>
+        </div>
+      </div>
+
+      <a href="#intro" class="hero__scroll" aria-label="Scroll to content">
+        <span>Scroll</span><i></i>
+      </a>
+
+      <!-- WCAG 2.2.2: moving content must be pausable -->
+      <button type="button" class="motion-toggle" aria-pressed="false">
+        <span class="motion-toggle__icon" aria-hidden="true"></span>
+        <span class="motion-toggle__label">Pause motion</span>
+      </button>
+    </section>
+
+    <!-- ============ INTRO ============ -->
+    <section class="intro section" id="intro">
+      <div class="container intro__grid">
+        <p class="eyebrow reveal">Bienvenidos</p>
+        <p class="intro__lead reveal-words">
+          From the cold Pacific to the high Andes, Peruvian cooking is a meeting of cultures —
+          Indigenous, Spanish, Japanese, Chinese and African. We bring that conversation to the table
+          with fire, citrus and a pour of pisco.
+        </p>
+        <div class="intro__stats">
+          <div class="stat reveal"><span class="stat__num" data-count="3800">0</span><span class="stat__label">Varieties of Peruvian potato</span></div>
+          <div class="stat reveal"><span class="stat__num" data-count="12">0</span><span class="stat__label">Hours our anticucho marinade rests</span></div>
+          <div class="stat reveal"><span class="stat__num" data-count="1">0</span><span class="stat__label">Chef with a family recipe book</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Ceviche</span><i>✦</i><span>Lomo Saltado</span><i>✦</i><span>Pisco Sour</span><i>✦</i><span>Anticuchos</span><i>✦</i><span>Ají de Gallina</span><i>✦</i><span>Chicha Morada</span><i>✦</i>
+        <span>Ceviche</span><i>✦</i><span>Lomo Saltado</span><i>✦</i><span>Pisco Sour</span><i>✦</i><span>Anticuchos</span><i>✦</i><span>Ají de Gallina</span><i>✦</i><span>Chicha Morada</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ============ FOOD: horizontal scroll of signature dishes ============ -->
+    <section class="food" id="food" aria-labelledby="food-title">
+      <div class="food__pin">
+        <div class="food__head container">
+          <p class="eyebrow reveal">Signature Dishes</p>
+          <h2 class="section-title reveal" id="food-title">Plates with a <em>story</em></h2>
+          <p class="section-sub reveal">Coastal, Andean and Amazonian flavors, cooked with Maryland produce and Chesapeake seafood.</p>
+        </div>
+        <div class="food__track">
+          <article class="dish">
+            <div class="dish__img clip-reveal"><div class="ph" role="img" aria-label="Ceviche clásico: cubes of white fish in leche de tigre with red onion, sweet potato and toasted corn" data-label="Close-up · Ceviche Clásico" style="--a:#d9a26a;--b:#5b2a14"></div></div>
+            <div class="dish__body">
+              <span class="dish__num">01</span>
+              <h3>Ceviche Clásico</h3>
+              <p>Line-caught rockfish cured in leche de tigre, red onion, ají limo, sweet potato and crunchy cancha.</p>
+              <span class="dish__price">$19</span>
+            </div>
+          </article>
+          <article class="dish">
+            <div class="dish__img clip-reveal"><div class="ph" role="img" aria-label="Lomo saltado: seared strips of beef with tomato and onion over fries, beside a dome of white rice" data-label="Close-up · Lomo Saltado" style="--a:#a4552c;--b:#2a120a"></div></div>
+            <div class="dish__body">
+              <span class="dish__num">02</span>
+              <h3>Lomo Saltado</h3>
+              <p>Wok-flamed beef tenderloin, tomato, red onion, soy and ají amarillo over hand-cut fries and rice.</p>
+              <span class="dish__price">$34</span>
+            </div>
+          </article>
+          <article class="dish">
+            <div class="dish__img clip-reveal"><div class="ph" role="img" aria-label="Anticuchos: charcoal-grilled skewers glazed with red ají panca, served with corn" data-label="Close-up · Anticuchos de Corazón" style="--a:#8c3b22;--b:#1f0c07"></div></div>
+            <div class="dish__body">
+              <span class="dish__num">03</span>
+              <h3>Anticuchos</h3>
+              <p>Charcoal-grilled skewers marinated in ají panca and cumin, with choclo and huacatay sauce.</p>
+              <span class="dish__price">$17</span>
+            </div>
+          </article>
+          <article class="dish">
+            <div class="dish__img clip-reveal"><div class="ph" role="img" aria-label="Ají de gallina: shredded chicken in a golden pepper sauce with olives, egg and rice" data-label="Close-up · Ají de Gallina" style="--a:#d4a33c;--b:#4a2a0c"></div></div>
+            <div class="dish__body">
+              <span class="dish__num">04</span>
+              <h3>Ají de Gallina</h3>
+              <p>Silky pulled chicken in a golden ají amarillo and walnut sauce, olives, egg and jasmine rice.</p>
+              <span class="dish__price">$28</span>
+            </div>
+          </article>
+          <article class="dish">
+            <div class="dish__img clip-reveal"><div class="ph" role="img" aria-label="Grilled octopus on crispy potatoes with olive aioli" data-label="Close-up · Pulpo a la Parrilla" style="--a:#7d4a5c;--b:#1c0e14"></div></div>
+            <div class="dish__body">
+              <span class="dish__num">05</span>
+              <h3>Pulpo a la Parrilla</h3>
+              <p>Grilled octopus, botija olive aioli, crispy potatoes and chimichurri de rocoto.</p>
+              <span class="dish__price">$31</span>
+            </div>
+          </article>
+          <article class="dish dish--cta">
+            <p class="eyebrow">Hungry yet?</p>
+            <h3>See the full menu</h3>
+            <a href="#menu" class="btn btn--gold magnetic">Explore the Menu</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MENU ============ -->
+    <section class="menu section textile-bg" id="menu" aria-labelledby="menu-title">
+      <div class="container">
+        <div class="menu__head">
+          <p class="eyebrow reveal">La Carta</p>
+          <h2 class="section-title reveal" id="menu-title">The <em>Menu</em></h2>
+          <p class="section-sub reveal">Sample menu · dishes and prices change with the season.</p>
+        </div>
+
+        <div class="tabs reveal" role="tablist" aria-label="Menu categories">
+          <button role="tab" aria-selected="true" aria-controls="tab-starters" id="t-starters" class="tab is-active">Ceviches &amp; Starters</button>
+          <button role="tab" aria-selected="false" aria-controls="tab-mains" id="t-mains" class="tab" tabindex="-1">Mains</button>
+          <button role="tab" aria-selected="false" aria-controls="tab-desserts" id="t-desserts" class="tab" tabindex="-1">Desserts</button>
+          <button role="tab" aria-selected="false" aria-controls="tab-drinks" id="t-drinks" class="tab" tabindex="-1">Cocktails &amp; Zero-Proof</button>
+        </div>
+
+        <div class="menu__panels">
+          <div class="menu__panel is-active" role="tabpanel" id="tab-starters" aria-labelledby="t-starters">
+            <ul class="menu__list">
+              <li><div class="mi"><h3>Ceviche Clásico</h3><span class="dots"></span><span class="mi__p">19</span></div><p>Rockfish, leche de tigre, ají limo, sweet potato, cancha</p></li>
+              <li><div class="mi"><h3>Ceviche Nikkei <span class="tag">Chef's pick</span></h3><span class="dots"></span><span class="mi__p">22</span></div><p>Ahi tuna, tamari tiger's milk, avocado, nori, sesame</p></li>
+              <li><div class="mi"><h3>Tiradito de Ají Amarillo</h3><span class="dots"></span><span class="mi__p">18</span></div><p>Thin-sliced flounder, golden pepper cream, choclo, microgreens</p></li>
+              <li><div class="mi"><h3>Causa Limeña <span class="tag tag--v">V</span></h3><span class="dots"></span><span class="mi__p">15</span></div><p>Chilled whipped yellow potato, avocado, pickled vegetables, olive</p></li>
+              <li><div class="mi"><h3>Anticuchos</h3><span class="dots"></span><span class="mi__p">17</span></div><p>Grilled skewers, ají panca, huacatay sauce, choclo</p></li>
+              <li><div class="mi"><h3>Empanadas de Lomo</h3><span class="dots"></span><span class="mi__p">14</span></div><p>Flaky pastry, braised beef, raisin, olive, rocoto salsa</p></li>
+              <li><div class="mi"><h3>Papa a la Huancaína <span class="tag tag--v">V</span></h3><span class="dots"></span><span class="mi__p">12</span></div><p>Heirloom potatoes, queso fresco &amp; ají amarillo sauce, egg</p></li>
+              <li><div class="mi"><h3>Choritos a la Chalaca</h3><span class="dots"></span><span class="mi__p">16</span></div><p>PEI mussels, lime, tomato, red onion, corn salsa</p></li>
+            </ul>
+          </div>
+
+          <div class="menu__panel" role="tabpanel" id="tab-mains" aria-labelledby="t-mains" hidden>
+            <ul class="menu__list">
+              <li><div class="mi"><h3>Lomo Saltado</h3><span class="dots"></span><span class="mi__p">34</span></div><p>Beef tenderloin stir-fry, tomato, onion, soy, fries, rice</p></li>
+              <li><div class="mi"><h3>Pollo a la Brasa <span class="tag">Signature</span></h3><span class="dots"></span><span class="mi__p">27</span></div><p>Rotisserie half chicken, ají verde, crispy yuca, house salad</p></li>
+              <li><div class="mi"><h3>Ají de Gallina</h3><span class="dots"></span><span class="mi__p">28</span></div><p>Shredded chicken, ají amarillo walnut cream, olive, egg</p></li>
+              <li><div class="mi"><h3>Arroz con Mariscos</h3><span class="dots"></span><span class="mi__p">36</span></div><p>Saffron-ají rice, shrimp, scallops, mussels, calamari</p></li>
+              <li><div class="mi"><h3>Seco de Cordero</h3><span class="dots"></span><span class="mi__p">38</span></div><p>Cilantro &amp; chicha-braised lamb shank, canario beans, salsa criolla</p></li>
+              <li><div class="mi"><h3>Pulpo a la Parrilla</h3><span class="dots"></span><span class="mi__p">31</span></div><p>Grilled octopus, botija olive aioli, crispy potatoes</p></li>
+              <li><div class="mi"><h3>Tacu Tacu <span class="tag tag--v">V</span></h3><span class="dots"></span><span class="mi__p">24</span></div><p>Crisped rice &amp; bean cake, fried plantain, salsa criolla, egg</p></li>
+              <li><div class="mi"><h3>Chaufa de Pato</h3><span class="dots"></span><span class="mi__p">32</span></div><p>Chifa-style fried rice, confit duck, scallion, ginger, egg</p></li>
+            </ul>
+          </div>
+
+          <div class="menu__panel" role="tabpanel" id="tab-desserts" aria-labelledby="t-desserts" hidden>
+            <ul class="menu__list">
+              <li><div class="mi"><h3>Suspiro Limeño</h3><span class="dots"></span><span class="mi__p">11</span></div><p>Dulce de leche custard, port meringue, cinnamon</p></li>
+              <li><div class="mi"><h3>Picarones</h3><span class="dots"></span><span class="mi__p">10</span></div><p>Squash &amp; sweet potato doughnuts, chancaca syrup</p></li>
+              <li><div class="mi"><h3>Alfajores</h3><span class="dots"></span><span class="mi__p">9</span></div><p>Shortbread, manjar blanco, powdered sugar</p></li>
+              <li><div class="mi"><h3>Mazamorra Morada</h3><span class="dots"></span><span class="mi__p">10</span></div><p>Purple corn pudding, spiced fruit, arroz con leche</p></li>
+              <li><div class="mi"><h3>Lúcuma Ice Cream</h3><span class="dots"></span><span class="mi__p">9</span></div><p>Andean lúcuma fruit, cacao nibs, caramel</p></li>
+            </ul>
+          </div>
+
+          <div class="menu__panel" role="tabpanel" id="tab-drinks" aria-labelledby="t-drinks" hidden>
+            <ul class="menu__list">
+              <li><div class="mi"><h3>Pisco Sour Clásico</h3><span class="dots"></span><span class="mi__p">14</span></div><p>Pisco quebranta, key lime, egg white, Amargo bitters</p></li>
+              <li><div class="mi"><h3>Chilcano de Maracuyá</h3><span class="dots"></span><span class="mi__p">13</span></div><p>Pisco, passion fruit, ginger ale, lime</p></li>
+              <li><div class="mi"><h3>El Inca Negroni</h3><span class="dots"></span><span class="mi__p">15</span></div><p>Coca-leaf infused gin, Campari, sweet vermouth, orange</p></li>
+              <li><div class="mi"><h3>Sol de Cusco</h3><span class="dots"></span><span class="mi__p">15</span></div><p>Pisco acholado, ají amarillo syrup, mango, smoked salt rim</p></li>
+              <li><div class="mi"><h3>Purple Mountain</h3><span class="dots"></span><span class="mi__p">14</span></div><p>Mezcal, chicha morada reduction, pineapple, cinnamon</p></li>
+              <li><div class="mi"><h3>Chicha Morada <span class="tag tag--v">0%</span></h3><span class="dots"></span><span class="mi__p">7</span></div><p>Purple corn, pineapple, clove, lime</p></li>
+              <li><div class="mi"><h3>Hierba Luisa Spritz <span class="tag tag--v">0%</span></h3><span class="dots"></span><span class="mi__p">8</span></div><p>Lemon verbena, elderflower tonic, cucumber</p></li>
+              <li><div class="mi"><h3>Inca Kola</h3><span class="dots"></span><span class="mi__p">5</span></div><p>Peru's golden soda, poured ice cold</p></li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="menu__note reveal">V = vegetarian · 0% = zero-proof · Please tell your server about any allergies.</p>
+      </div>
+    </section>
+
+    <!-- ============ COCKTAILS: pinned video + scrolling text ============ -->
+    <section class="cocktails" id="cocktails" aria-labelledby="cocktails-title">
+      <div class="cocktails__bg parallax-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="cocktails__head">
+          <p class="eyebrow reveal">El Bar</p>
+          <h2 class="section-title reveal" id="cocktails-title">Pisco, poured <em>with drama</em></h2>
+        </div>
+
+        <div class="cocktails__grid">
+          <div class="cocktails__sticky">
+            <div class="cocktails__video">
+              <!-- Replace with a pouring-footage <video autoplay muted loop playsinline> -->
+              <div class="ph ph--video" role="img" aria-label="Video: a bartender pours a cocktail into a chilled glass" data-label="Video · cocktail pour (loop)">
+                <div class="pour-scenes" aria-hidden="true">
+                  <span class="pour-scene is-active" style="--a:#e8c36a;--b:#5c3a10">Pisco Sour</span>
+                  <span class="pour-scene" style="--a:#e07a3a;--b:#5a1c0c">Chilcano de Maracuyá</span>
+                  <span class="pour-scene" style="--a:#f0a63a;--b:#6a2a0a">Sol de Cusco</span>
+                  <span class="pour-scene" style="--a:#7a2a6a;--b:#1e0a1c">Purple Mountain</span>
+                </div>
+              </div>
+              <div class="cocktails__now"><span>Now pouring</span><strong class="cocktails__now-name">Pisco Sour</strong></div>
+            </div>
+          </div>
+
+          <div class="cocktails__steps">
+            <article class="step" data-step="0">
+              <span class="step__num">I</span>
+              <h3>Pisco Sour Clásico</h3>
+              <p>The national drink of Peru. Pisco quebranta shaken hard with key lime and egg white until it wears a cloud of foam, finished with three drops of Amargo Chuncho bitters.</p>
+              <span class="step__price">$14</span>
+            </article>
+            <article class="step" data-step="1">
+              <span class="step__num">II</span>
+              <h3>Chilcano de Maracuyá</h3>
+              <p>Lima's favorite highball, brightened with fresh passion fruit, ginger ale and a long squeeze of lime. Light, tall and dangerously easy.</p>
+              <span class="step__price">$13</span>
+            </article>
+            <article class="step" data-step="2">
+              <span class="step__num">III</span>
+              <h3>Sol de Cusco</h3>
+              <p>Golden ají amarillo syrup meets ripe mango and pisco acholado, served over a single clear cube with a smoked salt rim. A little heat, a lot of sun.</p>
+              <span class="step__price">$15</span>
+            </article>
+            <article class="step" data-step="3">
+              <span class="step__num">IV</span>
+              <h3>Purple Mountain</h3>
+              <p>Mezcal and a slow-cooked reduction of chicha morada — purple corn, pineapple, clove and cinnamon. Deep, smoky and the color of an Andean dusk.</p>
+              <span class="step__price">$14</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STORY ============ -->
+    <section class="story section" id="story" aria-labelledby="story-title">
+      <div class="container story__grid">
+        <div class="story__portrait">
+          <div class="story__frame clip-reveal-circle">
+            <div class="ph parallax-img" role="img" aria-label="Portrait of Chef Antonio Poggi in chef&#39;s whites in the restaurant kitchen" data-label="Portrait · Chef Antonio Poggi" style="--a:#6a4630;--b:#1a110c"></div>
+          </div>
+          <svg class="story__line" viewBox="0 0 300 60" aria-hidden="true"><path d="M5 40 C 60 5, 110 55, 160 25 S 260 10, 295 35" /></svg>
+          <p class="story__caption">Chef Antonio Poggi</p>
+        </div>
+
+        <div class="story__text">
+          <p class="eyebrow reveal">Our Story</p>
+          <h2 class="section-title reveal" id="story-title">Raised on Lima's <em>kitchens</em>, cooking for Frederick</h2>
+          <p class="reveal">Chef Antonio Poggi grew up between his grandmother's stove in Lima and the bustling stalls of Mercado de Surquillo, where he learned that Peruvian cooking is about generosity — bright, bold food meant to be shared.</p>
+          <p class="reveal">After years in kitchens from Lima to Washington, D.C., he brought that spirit to downtown Frederick. The menu honors the classics, with Maryland ingredients and a few surprises along the way.</p>
+          <blockquote class="story__quote reveal">
+            “In Peru, the table is where the family happens. I want every guest to feel they've been invited to ours.”
+            <cite>— Chef Antonio Poggi</cite>
+          </blockquote>
+          <div class="pillars">
+            <div class="pillar reveal"><span>Costa</span><p>Ceviches, tiraditos and the coastal love of citrus and seafood.</p></div>
+            <div class="pillar reveal"><span>Sierra</span><p>Andean potatoes, corn, quinoa and slow-cooked stews.</p></div>
+            <div class="pillar reveal"><span>Selva</span><p>Amazonian fruits, herbs and the warmth of ají charapita.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ATMOSPHERE: masonry gallery + lightbox ============ -->
+    <section class="atmosphere section" id="atmosphere" aria-labelledby="atmos-title">
+      <div class="container">
+        <div class="atmosphere__head">
+          <p class="eyebrow reveal">The Atmosphere</p>
+          <h2 class="section-title reveal" id="atmos-title">Warm light. <em>Good company.</em></h2>
+        </div>
+        <div class="masonry">
+          <button class="tile tile--tall" data-label="Dining room at golden hour" aria-label="Open larger photo: Dining room at golden hour"><div class="ph" role="img" aria-label="The dining room at golden hour, with warm pendant lights over set tables" data-label="Dining room at golden hour" style="--a:#7a4a26;--b:#1c120a"></div></button>
+          <button class="tile" data-label="Bar with backlit pisco shelf" aria-label="Open larger photo: Bar with backlit pisco shelf"><div class="ph" role="img" aria-label="The bar, with a backlit shelf of pisco bottles" data-label="Bar with backlit pisco shelf" style="--a:#8a5a1e;--b:#1e1308"></div></button>
+          <button class="tile tile--video" data-label="Hover video · friends toasting" aria-label="Open larger photo: Hover video · friends toasting"><div class="ph ph--video" role="img" aria-label="Video: friends raising their glasses in a toast" data-label="Hover video · friends toasting" style="--a:#6a2a3a;--b:#170a0e"></div></button>
+          <button class="tile" data-label="Ceviche, overhead" aria-label="Open larger photo: Ceviche, overhead"><div class="ph" role="img" aria-label="Overhead view of a ceviche bowl surrounded by shared plates" data-label="Ceviche, overhead" style="--a:#c98a4a;--b:#3a1e0c"></div></button>
+          <button class="tile tile--tall" data-label="Textile wall detail" aria-label="Open larger photo: Textile wall detail"><div class="ph" role="img" aria-label="Close-up of a woven Peruvian textile on the dining room wall" data-label="Textile wall detail" style="--a:#9a3a2a;--b:#200c08"></div></button>
+          <button class="tile" data-label="Chef's counter" aria-label="Open larger photo: Chef's counter"><div class="ph" role="img" aria-label="Cooks plating dishes at the open chef&#39;s counter" data-label="Chef's counter" style="--a:#5a3a24;--b:#140d08"></div></button>
+          <button class="tile" data-label="Private dining table" aria-label="Open larger photo: Private dining table"><div class="ph" role="img" aria-label="A long private dining table set for a group" data-label="Private dining table" style="--a:#6e4a2e;--b:#18100a"></div></button>
+          <button class="tile tile--tall" data-label="Bartender garnishing a Pisco Sour" aria-label="Open larger photo: Bartender garnishing a Pisco Sour"><div class="ph" role="img" aria-label="A bartender adds drops of bitters to the foam of a pisco sour" data-label="Bartender garnishing a Pisco Sour" style="--a:#b08a3a;--b:#2a1c08"></div></button>
+          <button class="tile" data-label="Dessert service" aria-label="Open larger photo: Dessert service"><div class="ph" role="img" aria-label="Desserts on the table: picarones with syrup and a suspiro limeño" data-label="Dessert service" style="--a:#8a5a4a;--b:#1e120e"></div></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REVIEWS ============ -->
+    <section class="reviews section textile-bg" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="reviews__head">
+          <p class="eyebrow reveal">Kind Words</p>
+          <h2 class="section-title reveal" id="reviews-title">What our <em>guests</em> say</h2>
+          <p class="rating reveal"><span class="stars" aria-hidden="true">★★★★★</span> 4.9 average · sample reviews</p>
+        </div>
+      </div>
+      <div class="reviews__rail" tabindex="0" role="region" aria-label="Guest reviews, scroll horizontally">
+        <figure class="review">
+          <span class="stars" role="img" aria-label="5 stars">★★★★★</span>
+          <blockquote>“The ceviche tasted like a summer afternoon in Lima. The leche de tigre was so good I drank it straight from the bowl.”</blockquote>
+          <figcaption><strong>Maria L.</strong> · Frederick</figcaption>
+        </figure>
+        <figure class="review">
+          <span class="stars" role="img" aria-label="5 stars">★★★★★</span>
+          <blockquote>“Best pisco sour I've had outside of Peru. The bartenders treat every drink like theatre.”</blockquote>
+          <figcaption><strong>James T.</strong> · Hagerstown</figcaption>
+        </figure>
+        <figure class="review">
+          <span class="stars" role="img" aria-label="5 stars">★★★★★</span>
+          <blockquote>“We came for an anniversary and left feeling like family. Warm lighting, gorgeous room and the lomo saltado was perfect.”</blockquote>
+          <figcaption><strong>Priya &amp; Dev</strong> · Urbana</figcaption>
+        </figure>
+        <figure class="review">
+          <span class="stars" role="img" aria-label="4 stars">★★★★☆</span>
+          <blockquote>“A real date-night spot for downtown Frederick. Get the anticuchos and save room for the picarones.”</blockquote>
+          <figcaption><strong>Chris W.</strong> · Frederick</figcaption>
+        </figure>
+        <figure class="review">
+          <span class="stars" role="img" aria-label="5 stars">★★★★★</span>
+          <blockquote>“Chef came out to say hello and told us the story behind his grandmother's ají de gallina. Unforgettable.”</blockquote>
+          <figcaption><strong>Elena R.</strong> · Gaithersburg</figcaption>
+        </figure>
+        <figure class="review">
+          <span class="stars" role="img" aria-label="5 stars">★★★★★</span>
+          <blockquote>“The Purple Mountain cocktail is a work of art. Elegant without being stuffy — exactly what Frederick needed.”</blockquote>
+          <figcaption><strong>Marcus B.</strong> · Mount Airy</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ VISIT ============ -->
+    <section class="visit section" id="visit" aria-labelledby="visit-title">
+      <div class="visit__bg parallax-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="visit__head">
+          <p class="eyebrow reveal">Plan Your Visit</p>
+          <h2 class="section-title reveal" id="visit-title">Your table <em>is waiting</em></h2>
+        </div>
+
+        <div class="visit__grid">
+          <div class="visit__info">
+            <div class="info-block reveal">
+              <h3>Hours</h3>
+              <dl class="hours">
+                <div><dt>Monday</dt><dd>Closed</dd></div>
+                <div><dt>Tue – Thu</dt><dd>5:00 – 10:00 pm</dd></div>
+                <div><dt>Fri – Sat</dt><dd>5:00 – 11:00 pm</dd></div>
+                <div><dt>Sunday</dt><dd>11:00 am – 3:00 pm brunch<br>5:00 – 9:00 pm</dd></div>
+                <div><dt>Happy Hour</dt><dd>Tue – Fri · 5:00 – 6:30 pm</dd></div>
+              </dl>
+            </div>
+            <div class="info-block reveal">
+              <h3>Location</h3>
+              <p>[Street address]<br>Downtown Frederick, MD 21701</p>
+              <p><a href="tel:+13015550142">(301) 555-0142</a><br><span class="js-email" data-user="hola" data-domain="peruviansoul.example">hola [at] peruviansoul.example</span></p>
+            </div>
+            <div class="info-block reveal">
+              <h3>Directions &amp; Parking</h3>
+              <p>A short walk from Carroll Creek Linear Park. Public parking is available in the nearby downtown garages; street parking is free after 8pm.</p>
+              <a class="link-arrow" href="https://www.google.com/maps/dir/?api=1&amp;destination=Frederick%2C%20MD" target="_blank" rel="noopener">Get directions <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+            </div>
+            <!-- The Google map only loads after the visitor consents (Google sets its own cookies) -->
+            <div class="map reveal" data-map-src="https://www.google.com/maps?q=Downtown+Frederick,+MD&amp;z=15&amp;output=embed" data-map-title="Map of downtown Frederick, Maryland">
+              <div class="map__gate">
+                <p>The map is provided by Google, which may set cookies.</p>
+                <button type="button" class="btn btn--ghost btn--sm map__load">Load map</button>
+                <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Downtown%20Frederick%2C%20MD" target="_blank" rel="noopener">Open in Google Maps <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+              </div>
+            </div>
+          </div>
+
+          <form class="reserve reveal" id="reserve" novalidate aria-describedby="reserve-req">
+            <h3>Reserve a Table</h3>
+            <p class="reserve__sub">Parties of 8+ or private events? Call us at <a href="tel:+13015550142">(301) 555-0142</a>.</p>
+            <p class="reserve__req" id="reserve-req">Fields marked <span aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
+            <div class="field-row">
+              <div class="field">
+                <label for="r-date">Date <span class="req" aria-hidden="true">*</span></label>
+                <input type="date" id="r-date" name="date" required aria-describedby="r-date-err">
+                <span class="field__err" id="r-date-err"></span>
+              </div>
+              <div class="field">
+                <label for="r-time">Time <span class="req" aria-hidden="true">*</span></label>
+                <select id="r-time" name="time" required aria-describedby="r-time-err">
+                  <option value="">Select a time</option>
+                  <option>5:00 pm</option><option>5:30 pm</option><option>6:00 pm</option><option>6:30 pm</option>
+                  <option>7:00 pm</option><option>7:30 pm</option><option>8:00 pm</option><option>8:30 pm</option><option>9:00 pm</option>
+                </select>
+                <span class="field__err" id="r-time-err"></span>
+              </div>
+            </div>
+            <div class="field">
+              <span class="field__label" id="r-guests-label">Guests</span>
+              <div class="stepper" role="group" aria-labelledby="r-guests-label">
+                <button type="button" class="stepper__btn" data-dir="-1" aria-label="Fewer guests">−</button>
+                <input type="number" id="r-guests" name="guests" value="2" min="1" max="8" inputmode="numeric" aria-labelledby="r-guests-label">
+                <button type="button" class="stepper__btn" data-dir="1" aria-label="More guests">+</button>
+              </div>
+            </div>
+            <div class="field">
+              <label for="r-name">Name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="r-name" name="name" autocomplete="name" maxlength="80" required aria-describedby="r-name-err">
+              <span class="field__err" id="r-name-err"></span>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="r-email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="r-email" name="email" autocomplete="email" maxlength="120" required aria-describedby="r-email-err">
+                <span class="field__err" id="r-email-err"></span>
+              </div>
+              <div class="field">
+                <label for="r-phone">Phone</label>
+                <input type="tel" id="r-phone" name="phone" autocomplete="tel" maxlength="25" pattern="[0-9()+\-. ]{7,25}" aria-describedby="r-phone-err">
+                <span class="field__err" id="r-phone-err"></span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="r-notes">Occasion or notes</label>
+              <textarea id="r-notes" name="notes" rows="3" maxlength="500" placeholder="Anniversary, allergies, high chair…" aria-describedby="r-notes-err"></textarea>
+              <span class="field__err" id="r-notes-err"></span>
+            </div>
+
+            <!-- Spam protection: honeypot field. Hidden from people and screen readers; bots fill it in. -->
+            <div class="hp" aria-hidden="true">
+              <label for="r-website">Leave this field empty</label>
+              <input type="text" id="r-website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+            <!--
+              Spam protection, server side: when the form is connected to a booking backend,
+              add Cloudflare Turnstile (already allowed in the security policy) and verify the token on the server:
+              <div class="cf-turnstile" data-sitekey="YOUR_SITE_KEY" data-theme="dark"></div>
+              <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+            -->
+
+            <p class="reserve__legal">By requesting a reservation you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+            <button type="submit" class="btn btn--gold btn--block magnetic">
+              <span class="btn__label">Request Reservation</span>
+            </button>
+            <p class="reserve__msg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CLOSING CALL TO ACTION ============ -->
+    <section class="cta-band textile-bg" aria-labelledby="cta-title">
+      <div class="container cta-band__inner">
+        <div>
+          <p class="eyebrow reveal">Tonight in Frederick</p>
+          <h2 class="cta-band__title reveal" id="cta-title">Come hungry. <em>Leave like family.</em></h2>
+          <p class="cta-band__sub reveal">Book a table, plan a celebration in our private dining room, or join us for Happy Hour, Tuesday to Friday, 5:00–6:30 pm.</p>
+        </div>
+        <div class="cta-band__actions reveal">
+          <a href="#visit" class="btn btn--gold magnetic">Reserve a Table</a>
+          <a href="tel:+13015550142" class="btn btn--ghost magnetic">Call (301) 555-0142</a>
+          <a href="#menu" class="link-arrow">See the menu <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer textile-bg">
+    <div class="container footer__grid">
+      <div>
+        <a href="#top" class="logo logo--lg" aria-label="Peruvian Soul, back to top"><span class="logo__mark" aria-hidden="true">✦</span><span class="logo__text">Peruvian <em>Soul</em></span></a>
+        <p class="footer__tag">Cocina peruana in the heart of Frederick.</p>
+      </div>
+      <div>
+        <h2 class="footer__h">Visit</h2>
+        <p>[Street address]<br>Frederick, MD 21701<br><a href="tel:+13015550142">(301) 555-0142</a></p>
+      </div>
+      <div>
+        <h2 class="footer__h">Follow</h2>
+        <p><a href="#">Instagram</a><br><a href="#">Facebook</a><br><a href="#">TikTok</a></p>
+      </div>
+      <div>
+        <h2 class="footer__h" id="news-title">Newsletter</h2>
+        <p class="footer__news-sub">Seasonal menus, pisco nights and events. No spam; unsubscribe any time.</p>
+        <form class="news" novalidate aria-labelledby="news-title">
+          <label for="n-email" class="sr-only">Email address</label>
+          <input type="email" id="n-email" name="email" placeholder="Email address" autocomplete="email" maxlength="120" required>
+          <div class="hp" aria-hidden="true"><label for="n-company">Leave this field empty</label><input type="text" id="n-company" name="company" tabindex="-1" autocomplete="off"></div>
+          <button class="btn btn--gold btn--sm" type="submit">Join</button>
+        </form>
+        <p class="news__msg" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+    <nav class="footer__links container" aria-label="Legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="accessibility.html">Accessibility</a>
+      <button type="button" class="link-btn" data-cookie-settings>Cookie Settings</button>
+    </nav>
+    <p class="footer__legal container">© 2026 Peruvian Soul · Prototype with placeholder content</p>
+  </footer>
+
+  <!-- Persistent mobile reserve button -->
+  <a href="#visit" class="mobile-reserve">Reserve a Table</a>
+
+  <!-- Lightbox -->
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button type="button" class="lightbox__close" aria-label="Close photo viewer">×</button>
+    <button type="button" class="lightbox__nav lightbox__prev" aria-label="Previous photo">‹</button>
+    <figure class="lightbox__figure">
+      <div class="ph lightbox__ph" role="img"></div>
+      <figcaption class="lightbox__cap"></figcaption>
+    </figure>
+    <button type="button" class="lightbox__nav lightbox__next" aria-label="Next photo">›</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" integrity="sha384-B2WBjDzEjJpYvhmi2UyEn7rektqkf5suS6sNoyyrf0EBAwBHdkiXxIlU0V5Ru2ed" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>

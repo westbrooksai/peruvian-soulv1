@@ -1,0 +1,9 @@
+{
+  "name": "Peruvian Soul",
+  "short_name": "Peruvian Soul",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }],
+  "theme_color": "#15100d",
+  "background_color": "#15100d",
+  "display": "standalone",
+  "start_url": "/"
+}
