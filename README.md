@@ -35,11 +35,11 @@ Hero · Signature dishes · Tabbed menu · Cocktail bar · Chef's story · Atmos
 - Cookie consent banner with per-category choices; the Google Map loads only after consent; respects Global Privacy Control
 - Privacy policy, terms and conditions and an accessibility statement
 - HTTPS enforcement and security headers (Content-Security-Policy, HSTS and more) for Apache, Netlify and Cloudflare hosts
-- Subresource Integrity on all CDN scripts
+- **Nothing loads from another company until the visitor accepts:** fonts and scripts are self-hosted, and any future analytics or pixel must go through a consent gate in `site.js`
 - Spam protection: honeypot fields, minimum fill time, link filtering, rate limiting and email obfuscation
 
 ## Built with
-HTML, CSS and vanilla JavaScript · [GSAP](https://gsap.com/) & ScrollTrigger · [Lenis](https://lenis.darkroom.engineering/) · Google Fonts
+HTML, CSS and vanilla JavaScript · [GSAP](https://gsap.com/) & ScrollTrigger · [Lenis](https://lenis.darkroom.engineering/) · Cormorant Garamond & Inter (all self-hosted; see `THIRD_PARTY_NOTICES.md`)
 
 No build step: open `index.html` in a browser, or serve the folder with any static host.
 
@@ -53,3 +53,4 @@ No build step: open `index.html` in a browser, or serve the folder with any stat
 | `site.js` | Shared code: HTTPS redirect, cookie consent, map gate, email obfuscation |
 | `.htaccess`, `_headers`, `_redirects` | Server configuration for HTTPS and security headers |
 | `img/`, `video/` | Compressed WebP photos, the hero video and its poster frame |
+| `fonts/`, `fonts.css`, `vendor/` | Self-hosted fonts and animation libraries |

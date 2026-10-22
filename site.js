@@ -25,7 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const write = prefs => {
     const value = { necessary: true, maps: !!prefs.maps, analytics: !!prefs.analytics, marketing: !!prefs.marketing && !gpc, date: new Date().toISOString() };
     try { localStorage.setItem(KEY, JSON.stringify(value)); } catch { /* storage blocked: consent lasts this visit only */ }
+    // Withdrawing consent can't unload code that already ran, so reload to start clean
+    const withdrawn = current && ['maps', 'analytics', 'marketing'].some(k => current[k] && !value[k]);
     current = value;
+    if (withdrawn) { location.reload(); return; }
     apply(value);
   };
   let current = read();
@@ -44,16 +47,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  /* Consent gate for analytics, pixels and any other third-party code.
+     Nothing in these categories may load before the visitor allows it. Add trackers ONLY in this form:
+       <script type="text/plain" data-consent="analytics" data-src="https://provider.example/script.js"></script>
+       <img data-consent="marketing" data-src="https://pixel.example/p.gif" alt="" width="1" height="1" hidden>
+     type="text/plain" stops the browser from running the script until consent swaps it for a real one.
+     The security policy also blocks every third-party script, so each provider's domain must be added to it
+     (in every page and in _headers/.htaccess), and inline setup code must live in a local .js file. */
+  const activate = prefs => {
+    document.querySelectorAll('script[type="text/plain"][data-consent]').forEach(held => {
+      if (!prefs[held.dataset.consent]) return;
+      const live = document.createElement('script');
+      [...held.attributes].forEach(a => {
+        if (a.name === 'type' || a.name === 'data-consent') return;
+        live.setAttribute(a.name === 'data-src' ? 'src' : a.name, a.value);
+      });
+      held.replaceWith(live);
+    });
+    document.querySelectorAll('img[data-consent][data-src], iframe[data-consent][data-src]').forEach(el => {
+      if (!prefs[el.dataset.consent]) return;
+      el.src = el.dataset.src;
+      el.removeAttribute('data-src');
+    });
+  };
+
   const apply = prefs => {
     if (!prefs) return;
     if (prefs.maps) loadMaps();
-    if (prefs.analytics) {
-      // Load analytics here once the client chooses a provider, e.g. Plausible or Google Analytics.
-      // Add the provider's domain to the Content-Security-Policy as well.
-    }
-    if (prefs.marketing) {
-      // Load marketing pixels here (e.g. Meta Pixel), if the client uses any.
-    }
+    activate(prefs);
   };
 
   /* ---------- Banner ---------- */
