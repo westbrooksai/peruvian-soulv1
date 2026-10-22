@@ -78,19 +78,11 @@
     <!-- ============ HERO: background video hero ============ -->
     <section class="hero" id="top" aria-label="Welcome">
       <div class="hero__media">
-        <!--
-          Replace this placeholder with the real hero reel, e.g.:
-          <video class="hero__video" autoplay muted loop playsinline poster="img/hero-poster.jpg">
-            <source src="video/hero-reel.mp4" type="video/mp4">
-          </video>
-        -->
-        <div class="ph ph--video hero__ph" role="img" aria-label="Video: Chef Antonio Poggi plates a dish, a bartender pours a pisco sour, and guests share dinner in the warmly lit dining room" data-label="Hero video · chef plating → pisco pour → guests at dinner">
-          <div class="hero__scenes" aria-hidden="true">
-            <span class="hero__scene is-active" style="--a:#5a2c18;--b:#1b0f0a">Chef plating ceviche</span>
-            <span class="hero__scene" style="--a:#7a3b4f;--b:#1a0d12">Pisco sour being poured</span>
-            <span class="hero__scene" style="--a:#6b4a1f;--b:#140e08">Guests sharing dinner</span>
-          </div>
-        </div>
+        <!-- Hero reel: script.js starts playback unless the visitor prefers reduced motion or presses Pause -->
+        <video class="hero__video" muted loop playsinline preload="auto" poster="img/hero-poster.webp"
+          aria-label="Video: a chef plates ceviche, a bartender pours a pisco sour, and friends share dinner in the warmly lit dining room">
+          <source src="video/hero-reel.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="hero__shade"></div>
 
@@ -153,7 +145,7 @@
         </div>
         <div class="food__track">
           <article class="dish">
-            <div class="dish__img clip-reveal"><div class="ph" role="img" aria-label="Ceviche clásico: cubes of white fish in leche de tigre with red onion, sweet potato and toasted corn" data-label="Close-up · Ceviche Clásico" style="--a:#d9a26a;--b:#5b2a14"></div></div>
+            <div class="dish__img clip-reveal"><img src="img/dish-ceviche.webp" alt="Ceviche clásico: cubes of white fish in leche de tigre with red onion, sweet potato and toasted corn" width="1208" height="1500" loading="lazy" decoding="async"></div>
             <div class="dish__body">
               <span class="dish__num">01</span>
               <h3>Ceviche Clásico</h3>
@@ -162,7 +154,7 @@
             </div>
           </article>
           <article class="dish">
-            <div class="dish__img clip-reveal"><div class="ph" role="img" aria-label="Lomo saltado: seared strips of beef with tomato and onion over fries, beside a dome of white rice" data-label="Close-up · Lomo Saltado" style="--a:#a4552c;--b:#2a120a"></div></div>
+            <div class="dish__img clip-reveal"><img src="img/dish-lomo-saltado.webp" alt="Lomo saltado: seared strips of beef with tomato and onion over fries, beside a dome of white rice" width="1208" height="1500" loading="lazy" decoding="async"></div>
             <div class="dish__body">
               <span class="dish__num">02</span>
               <h3>Lomo Saltado</h3>
@@ -171,7 +163,7 @@
             </div>
           </article>
           <article class="dish">
-            <div class="dish__img clip-reveal"><div class="ph" role="img" aria-label="Anticuchos: charcoal-grilled skewers glazed with red ají panca, served with corn" data-label="Close-up · Anticuchos de Corazón" style="--a:#8c3b22;--b:#1f0c07"></div></div>
+            <div class="dish__img clip-reveal"><img src="img/dish-anticuchos.webp" alt="Anticuchos: charcoal-grilled skewers glazed with red ají panca on a stone board, with grilled corn, potatoes and green huacatay sauce" width="1208" height="1500" loading="lazy" decoding="async"></div>
             <div class="dish__body">
               <span class="dish__num">03</span>
               <h3>Anticuchos</h3>
@@ -180,7 +172,7 @@
             </div>
           </article>
           <article class="dish">
-            <div class="dish__img clip-reveal"><div class="ph" role="img" aria-label="Ají de gallina: shredded chicken in a golden pepper sauce with olives, egg and rice" data-label="Close-up · Ají de Gallina" style="--a:#d4a33c;--b:#4a2a0c"></div></div>
+            <div class="dish__img clip-reveal"><img src="img/dish-aji-de-gallina.webp" alt="Ají de gallina: shredded chicken in a golden pepper sauce with olives, egg and rice" width="1208" height="1500" loading="lazy" decoding="async"></div>
             <div class="dish__body">
               <span class="dish__num">04</span>
               <h3>Ají de Gallina</h3>
@@ -189,7 +181,7 @@
             </div>
           </article>
           <article class="dish">
-            <div class="dish__img clip-reveal"><div class="ph" role="img" aria-label="Grilled octopus on crispy potatoes with olive aioli" data-label="Close-up · Pulpo a la Parrilla" style="--a:#7d4a5c;--b:#1c0e14"></div></div>
+            <div class="dish__img clip-reveal"><img src="img/dish-pulpo.webp" alt="Grilled octopus on crispy potatoes with a swoosh of purple olive aioli and red rocoto sauce" width="1208" height="1500" loading="lazy" decoding="async"></div>
             <div class="dish__body">
               <span class="dish__num">05</span>
               <h3>Pulpo a la Parrilla</h3>
@@ -369,15 +361,15 @@
           <h2 class="section-title reveal" id="atmos-title">Warm light. <em>Good company.</em></h2>
         </div>
         <div class="masonry">
-          <button class="tile tile--tall" data-label="Dining room at golden hour" aria-label="Open larger photo: Dining room at golden hour"><div class="ph" role="img" aria-label="The dining room at golden hour, with warm pendant lights over set tables" data-label="Dining room at golden hour" style="--a:#7a4a26;--b:#1c120a"></div></button>
-          <button class="tile" data-label="Bar with backlit pisco shelf" aria-label="Open larger photo: Bar with backlit pisco shelf"><div class="ph" role="img" aria-label="The bar, with a backlit shelf of pisco bottles" data-label="Bar with backlit pisco shelf" style="--a:#8a5a1e;--b:#1e1308"></div></button>
+          <button class="tile tile--tall" data-label="Dining room at golden hour" aria-label="Open larger photo: Dining room at golden hour"><img src="img/gallery-dining-room.webp" alt="The dining room at golden hour, with warm pendant lights over set tables" width="1195" height="1600" loading="lazy" decoding="async"></button>
+          <button class="tile" data-label="Bar with backlit pisco shelf" aria-label="Open larger photo: Bar with backlit pisco shelf"><img src="img/gallery-bar.webp" alt="The bar, with a backlit shelf of pisco bottles" width="1600" height="1195" loading="lazy" decoding="async"></button>
           <button class="tile tile--video" data-label="Hover video · friends toasting" aria-label="Open larger photo: Hover video · friends toasting"><div class="ph ph--video" role="img" aria-label="Video: friends raising their glasses in a toast" data-label="Hover video · friends toasting" style="--a:#6a2a3a;--b:#170a0e"></div></button>
-          <button class="tile" data-label="Ceviche, overhead" aria-label="Open larger photo: Ceviche, overhead"><div class="ph" role="img" aria-label="Overhead view of a ceviche bowl surrounded by shared plates" data-label="Ceviche, overhead" style="--a:#c98a4a;--b:#3a1e0c"></div></button>
-          <button class="tile tile--tall" data-label="Textile wall detail" aria-label="Open larger photo: Textile wall detail"><div class="ph" role="img" aria-label="Close-up of a woven Peruvian textile on the dining room wall" data-label="Textile wall detail" style="--a:#9a3a2a;--b:#200c08"></div></button>
-          <button class="tile" data-label="Chef's counter" aria-label="Open larger photo: Chef's counter"><div class="ph" role="img" aria-label="Cooks plating dishes at the open chef&#39;s counter" data-label="Chef's counter" style="--a:#5a3a24;--b:#140d08"></div></button>
-          <button class="tile" data-label="Private dining table" aria-label="Open larger photo: Private dining table"><div class="ph" role="img" aria-label="A long private dining table set for a group" data-label="Private dining table" style="--a:#6e4a2e;--b:#18100a"></div></button>
-          <button class="tile tile--tall" data-label="Bartender garnishing a Pisco Sour" aria-label="Open larger photo: Bartender garnishing a Pisco Sour"><div class="ph" role="img" aria-label="A bartender adds drops of bitters to the foam of a pisco sour" data-label="Bartender garnishing a Pisco Sour" style="--a:#b08a3a;--b:#2a1c08"></div></button>
-          <button class="tile" data-label="Dessert service" aria-label="Open larger photo: Dessert service"><div class="ph" role="img" aria-label="Desserts on the table: picarones with syrup and a suspiro limeño" data-label="Dessert service" style="--a:#8a5a4a;--b:#1e120e"></div></button>
+          <button class="tile" data-label="Ceviche, overhead" aria-label="Open larger photo: Ceviche, overhead"><img src="img/gallery-ceviche-overhead.webp" alt="Overhead view of a ceviche bowl surrounded by shared plates, with two hands reaching in with forks" width="1600" height="1195" loading="lazy" decoding="async"></button>
+          <button class="tile tile--tall" data-label="Textile wall detail" aria-label="Open larger photo: Textile wall detail"><img src="img/gallery-textile.webp" alt="Close-up of a woven Peruvian textile on the dining room wall" width="1195" height="1600" loading="lazy" decoding="async"></button>
+          <button class="tile" data-label="Chef's counter" aria-label="Open larger photo: Chef's counter"><img src="img/gallery-chefs-counter.webp" alt="Cooks plating dishes under copper heat lamps at the open counter, with a wok flaring behind them" width="1600" height="1195" loading="lazy" decoding="async"></button>
+          <button class="tile" data-label="Private dining table" aria-label="Open larger photo: Private dining table"><img src="img/gallery-private-dining.webp" alt="A long private dining table set for a group, lit by candles and pendant lights" width="1600" height="1195" loading="lazy" decoding="async"></button>
+          <button class="tile tile--tall" data-label="Bartender garnishing a Pisco Sour" aria-label="Open larger photo: Bartender garnishing a Pisco Sour"><img src="img/gallery-bartender.webp" alt="A bartender adds drops of bitters to the foam of a pisco sour" width="1195" height="1600" loading="lazy" decoding="async"></button>
+          <button class="tile" data-label="Dessert service" aria-label="Open larger photo: Dessert service"><img src="img/gallery-dessert.webp" alt="Picarones drizzled with dark syrup beside a suspiro limeño and an espresso" width="1600" height="1195" loading="lazy" decoding="async"></button>
         </div>
       </div>
     </section>
@@ -599,6 +591,7 @@
     <button type="button" class="lightbox__close" aria-label="Close photo viewer">×</button>
     <button type="button" class="lightbox__nav lightbox__prev" aria-label="Previous photo">‹</button>
     <figure class="lightbox__figure">
+      <img class="lightbox__img" alt="" hidden>
       <div class="ph lightbox__ph" role="img"></div>
       <figcaption class="lightbox__cap"></figcaption>
     </figure>

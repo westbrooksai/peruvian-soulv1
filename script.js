@@ -129,18 +129,6 @@
   }, { rootMargin: '-45% 0px -50% 0px' });
   ['food', 'menu', 'cocktails', 'story', 'atmosphere', 'visit'].forEach(id => sectionObserver.observe($('#' + id)));
 
-  /* ---------- Hero "video" scene cycling (placeholder reel) ---------- */
-  const heroScenes = $$('.hero__scene');
-  if (!reduceMotion && heroScenes.length) {
-    let i = 0;
-    setInterval(() => {
-      if (motionPaused) return;
-      heroScenes[i].classList.remove('is-active');
-      i = (i + 1) % heroScenes.length;
-      heroScenes[i].classList.add('is-active');
-    }, 4200);
-  }
-
   /* ---------- Cocktails: sticky video swaps with each scrolling step ---------- */
   const steps = $$('.step');
   const pourScenes = $$('.pour-scene');
@@ -186,17 +174,26 @@
   /* ---------- Lightbox gallery ---------- */
   const tiles = $$('.tile');
   const lightbox = $('.lightbox');
+  const lbImg = $('.lightbox__img');
   const lbPh = $('.lightbox__ph');
   const lbCap = $('.lightbox__cap');
   let lbIndex = 0;
   let lastFocus = null;
   const showTile = idx => {
     lbIndex = (idx + tiles.length) % tiles.length;
+    const img = tiles[lbIndex].querySelector('img');
     const src = tiles[lbIndex].querySelector('.ph');
-    lbPh.setAttribute('style', src.getAttribute('style'));
-    lbPh.dataset.label = src.dataset.label;
-    lbPh.setAttribute('aria-label', src.getAttribute('aria-label'));
-    lbPh.classList.toggle('ph--video', src.classList.contains('ph--video'));
+    lbImg.hidden = !img;
+    lbPh.hidden = !!img;
+    if (img) {
+      lbImg.src = img.currentSrc || img.src;
+      lbImg.alt = img.alt;
+    } else {
+      lbPh.setAttribute('style', src.getAttribute('style'));
+      lbPh.dataset.label = src.dataset.label;
+      lbPh.setAttribute('aria-label', src.getAttribute('aria-label'));
+      lbPh.classList.toggle('ph--video', src.classList.contains('ph--video'));
+    }
     lbCap.textContent = tiles[lbIndex].dataset.label;
   };
   const openLightbox = idx => {
@@ -350,7 +347,7 @@
     document.documentElement.classList.add('is-loaded');
     if (!animate) return;
     gsap.timeline({ delay: .35 })
-      .from('.hero__ph', { scale: 1.18, duration: 2.4, ease: 'power3.out' }, 0)
+      .from('.hero__video', { scale: 1.18, duration: 2.4, ease: 'power3.out' }, 0)
       .from('.hero__title .line__inner', { yPercent: 110, duration: 1.3, stagger: .12, ease: 'power4.out' }, .2)
       .from('.hero__eyebrow', { autoAlpha: 0, y: 20, duration: .9, ease: 'power3.out' }, .5)
       .from('.hero__actions', { autoAlpha: 0, y: 24, duration: .9, ease: 'power3.out' }, .8)

@@ -296,7 +296,9 @@ section[id], main[id] { scroll-margin-top: 64px; }   /* keeps headings clear of 
 
 .hero__shade {
   position: absolute; inset: 0;
+  /* Left-side wash keeps the headline readable over bright frames of the video */
   background:
+    linear-gradient(90deg, rgba(21, 16, 13, .78) 0%, rgba(21, 16, 13, .5) 45%, rgba(21, 16, 13, .1) 75%, rgba(21, 16, 13, 0) 100%),
     linear-gradient(180deg, rgba(21, 16, 13, .55) 0%, rgba(21, 16, 13, 0) 30%, rgba(21, 16, 13, .25) 55%, rgba(21, 16, 13, .95) 100%);
 }
 .hero__content { position: relative; z-index: 2; width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter) clamp(90px, 14vh, 140px); }
@@ -346,8 +348,10 @@ section[id], main[id] { scroll-margin-top: 64px; }   /* keeps headings clear of 
 }
 .dish { width: clamp(300px, 34vw, 480px); flex-shrink: 0; }
 .dish__img { aspect-ratio: 4 / 5; border-radius: 4px; overflow: hidden; margin-bottom: 24px; }
-.dish__img .ph { transition: transform 1.2s var(--ease); }
-.dish:hover .dish__img .ph { transform: scale(1.05); }
+.dish__img { background: var(--bg-3); }
+.dish__img .ph, .dish__img img { transition: transform 1.2s var(--ease); }
+.dish__img img, .tile img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.dish:hover .dish__img .ph, .dish:hover .dish__img img { transform: scale(1.05); }
 .dish__body { position: relative; padding-right: 60px; }
 .dish__num { font-size: 12px; letter-spacing: .2em; color: var(--copper); }
 .dish h3 { font-size: clamp(30px, 2.6vw, 40px); margin: 6px 0 10px; }
@@ -476,8 +480,9 @@ section[id], main[id] { scroll-margin-top: 64px; }   /* keeps headings clear of 
   aspect-ratio: 4 / 3; border-radius: 4px; overflow: hidden; break-inside: avoid; position: relative;
 }
 .tile--tall { aspect-ratio: 3 / 4; }
-.tile .ph { transition: transform 1s var(--ease), filter .6s; }
-.tile:hover .ph { transform: scale(1.06); filter: brightness(1.15); }
+.tile { background: var(--bg-3); }
+.tile .ph, .tile img { transition: transform 1s var(--ease), filter .6s; }
+.tile:hover .ph, .tile:hover img { transform: scale(1.06); filter: brightness(1.12); }
 .tile--video .ph { animation: none; }
 .tile--video:hover .ph { animation: shimmer 3s linear infinite; background-size: 200% 200%; }
 @keyframes shimmer { 0% { background-position: 0% 0%; } 50% { background-position: 100% 100%; } 100% { background-position: 0% 0%; } }
@@ -491,6 +496,7 @@ section[id], main[id] { scroll-margin-top: 64px; }   /* keeps headings clear of 
 .lightbox[hidden] { display: none; }
 .lightbox__figure { margin: 0; width: min(1000px, 80vw); }
 .lightbox__ph { aspect-ratio: 16 / 10; border-radius: 4px; }
+.lightbox__img { display: block; max-width: 100%; max-height: 78vh; width: auto; height: auto; margin: 0 auto; border-radius: 4px; }
 .lightbox__cap { text-align: center; margin-top: 16px; font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--cream-dim); }
 .lightbox__close { position: absolute; top: 20px; right: 24px; font-size: 40px; background: none; border: 0; cursor: pointer; line-height: 1; }
 .lightbox__nav { background: none; border: 1px solid var(--line); border-radius: 50%; width: 52px; height: 52px; font-size: 28px; cursor: pointer; flex-shrink: 0; transition: border-color .3s; }

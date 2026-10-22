@@ -2,7 +2,7 @@
 
 A cinematic, upscale website concept for **Peruvian Soul**, a modern Peruvian restaurant in Frederick, Maryland. The design is meant to feel like stepping into the restaurant itself: warm light, rich color and movement that brings the food and hospitality to life.
 
-> **Concept / spec design.** Photos and videos are placeholders, and the menu, reviews, address and contact details are sample content. Forms are demos and do not send data.
+> **Concept / spec design.** Food, drink and interior photography and the hero video were generated with AI (Higgsfield: Nano Banana Pro stills and a Seedance 2.5 video) for this concept. A few slots still use styled placeholders: the cocktail pour video, the chef portrait and one gallery video. The menu, reviews, address and contact details are sample content, and the forms are demos that do not send data.
 
 **Live demo:** https://westbrooksai.github.io/peruvian-soulv1/
 
@@ -52,3 +52,4 @@ No build step: open `index.html` in a browser, or serve the folder with any stat
 | `script.js` | Scroll effects and interactions for the main page |
 | `site.js` | Shared code: HTTPS redirect, cookie consent, map gate, email obfuscation |
 | `.htaccess`, `_headers`, `_redirects` | Server configuration for HTTPS and security headers |
+| `img/`, `video/` | Compressed WebP photos, the hero video and its poster frame |
